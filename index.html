@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>アスカ</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- トップ画面 -->
+  <main id="homeScreen" class="screen active">
+    <div class="overlay"></div>
+    <section class="home-content">
+      <h1 class="app-title">アスカ</h1>
+
+      <div class="start-message">
+        <p>アスカ：</p>
+        <p>遅かったじゃない。</p>
+        <p>今日は何するの？</p>
+      </div>
+
+      <div class="mode-buttons">
+        <button class="mode-btn" data-mode="雑談モード">
+          アスカ、話そう。
+          <span>雑談モード</span>
+        </button>
+
+        <button class="mode-btn" data-mode="問題整理モード">
+          アスカ、相談。
+          <span>問題整理モード</span>
+        </button>
+
+        <button class="mode-btn" data-mode="戦略思考モード">
+          アスカ、作戦会議。
+          <span>戦略思考モード</span>
+        </button>
+      </div>
+    </section>
+  </main>
+
+  <!-- 会話画面 -->
+  <main id="chatScreen" class="screen">
+    <header class="chat-header">
+      <button id="backButton" class="back-btn" type="button">← 戻る</button>
+      <div>
+        <h2 class="chat-title">アスカ</h2>
+        <p id="modeLabel" class="mode-label">雑談モード</p>
+      </div>
+    </header>
+
+    <section id="chatLog" class="chat-log">
+      <div class="message asuka">
+        <div class="bubble">
+          <strong>アスカ：</strong>
+          <span id="initialAsukaMessage">何の話するの？</span>
+        </div>
+      </div>
+    </section>
+
+    <form id="chatForm" class="chat-form">
+      <input
+        id="userInput"
+        type="text"
+        placeholder="ここに入力"
+        autocomplete="off"
+      />
+      <button type="submit">送信</button>
+    </form>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
