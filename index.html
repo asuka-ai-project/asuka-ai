@@ -1,73 +1,97 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>アスカ</title>
-  <link rel="stylesheet" href="style.css" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<title>アスカ</title>
+
+<link rel="stylesheet" href="style.css">
+
+<!-- アプリアイコン -->
+<link rel="apple-touch-icon" href="icon.png">
+
+<!-- iPhoneアプリ表示 -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-title" content="アスカ">
+
 </head>
+
 <body>
-  <!-- トップ画面 -->
-  <main id="homeScreen" class="screen active">
-    <div class="overlay"></div>
-    <section class="home-content">
-      <h1 class="app-title">アスカ</h1>
 
-      <div class="start-message">
-        <p>アスカ：</p>
-        <p>遅かったじゃない。</p>
-        <p>今日は何するの？</p>
-      </div>
+<!-- トップ画面 -->
+<main id="homeScreen" class="screen active">
 
-      <div class="mode-buttons">
-        <button class="mode-btn" data-mode="雑談モード">
-          アスカ、話そう。
-          <span>雑談モード</span>
-        </button>
+<div class="overlay"></div>
 
-        <button class="mode-btn" data-mode="問題整理モード">
-          アスカ、相談。
-          <span>問題整理モード</span>
-        </button>
+<section class="home-content">
 
-        <button class="mode-btn" data-mode="戦略思考モード">
-          アスカ、作戦会議。
-          <span>戦略思考モード</span>
-        </button>
-      </div>
-    </section>
-  </main>
+<h1 class="app-title">アスカ</h1>
 
-  <!-- 会話画面 -->
-  <main id="chatScreen" class="screen">
-    <header class="chat-header">
-      <button id="backButton" class="back-btn" type="button">← 戻る</button>
-      <div>
-        <h2 class="chat-title">アスカ</h2>
-        <p id="modeLabel" class="mode-label">雑談モード</p>
-      </div>
-    </header>
+<div class="start-message">
+<p>アスカ：</p>
+<p>遅かったじゃない。</p>
+<p>今日は何するの？</p>
+</div>
 
-    <section id="chatLog" class="chat-log">
-      <div class="message asuka">
-        <div class="bubble">
-          <strong>アスカ：</strong>
-          <span id="initialAsukaMessage">何の話するの？</span>
-        </div>
-      </div>
-    </section>
+<button onclick="startChat('talk')">
+アスカ、話そう
+</button>
 
-    <form id="chatForm" class="chat-form">
-      <input
-        id="userInput"
-        type="text"
-        placeholder="ここに入力"
-        autocomplete="off"
-      />
-      <button type="submit">送信</button>
-    </form>
-  </main>
+<button onclick="startChat('consult')">
+アスカ、相談
+</button>
 
-  <script src="script.js"></script>
+<button onclick="startChat('strategy')">
+アスカ、作戦会議
+</button>
+
+</section>
+
+</main>
+
+
+<!-- 会話画面 -->
+<main id="chatScreen" class="screen">
+
+<header>
+
+<h2>アスカ</h2>
+
+<p id="modeLabel"></p>
+
+</header>
+
+
+<div id="chatArea">
+
+<div class="asuka-message">
+アスカ：さて、話してみなさいよ。
+</div>
+
+</div>
+
+
+<div class="input-area">
+
+<input
+type="text"
+id="userInput"
+placeholder="メッセージ入力"
+/>
+
+<button onclick="sendMessage()">
+送信
+</button>
+
+</div>
+
+</main>
+
+
+<script src="script.js"></script>
+
 </body>
 </html>
