@@ -68,7 +68,6 @@ chatForm.addEventListener("submit", (event) => {
 
   addMessage("user", text);
 
-  // いまは試作版なので固定返答
   setTimeout(() => {
     addMessage("asuka", "ふん、いいわ。続けなさい。今は試作版だけど、ちゃんと形になってきてる。");
   }, 300);
